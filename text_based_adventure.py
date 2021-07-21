@@ -14,33 +14,51 @@ def light_match():
     print("You light a match but it's still too dark to read the note. Do you continue or stay with your friend?")
     print("a. Continue through the tunnel")
     print("b. Stay with friend")
-    answer = input("Choose 'a' or 'b': ").lower() 
+
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'")
 
     if answer == 'a':
         continue_through_tunnel()
-    else:
+    if answer == 'b':
         sit_next_to_friend()
 
 def read_note_light():
     print("You read the note and is says 'Don't leave me here'. Do you go back to your friend or get on the boat?")
     print("a. Go back to your friend")
     print("b. Get on the boat")
-    answer = input("Choose 'a' or 'b': ").lower() 
+
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'")
 
     if answer == 'a':
         stay_with_friend_end()
-    else:
+    if answer == 'b':
         rescue_boat_end()
 
 def read_note_dark():
     print("You try to read the note but it's too dark. Do you light a match or conintue?")
     print("a. Continue through the tunnel")
     print("b. Light a match")
-    answer = input("Choose 'a' or 'b': ").lower() 
+
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'") 
 
     if answer == 'a':
         continue_through_tunnel()
-    else:
+    if answer == 'b':
         light_match()
 
 def stay_with_friend_end():
@@ -57,22 +75,34 @@ def continue_through_tunnel():
     print("You continue through the tunnel. At the end of the tunnel is a beach where you see a rescue boat. It is light enough to read the note from your friend. Do you read the note or get on the rescue boat?")
     print("a. Read the note")
     print("b. Get on the rescue boat")
-    answer = input("Choose 'a' or 'b': ").lower() 
+
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'")
 
     if answer == 'a':
         read_note_light()
-    else:
+    if answer == 'b':
         rescue_boat_end()
 
 def enter_tunnel():
     print("You enter the tunnel. Your friend hands you a note. Do you try to read it or continue through the tunnel?")
     print("a. Continue through the tunnel")
     print("b. Read the note")
-    answer = input("Choose 'a' or 'b': ").lower() 
+
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'") 
 
     if answer == 'a':
         continue_through_tunnel()
-    else:
+    if answer == 'b':
         read_note_dark()
 
 def move_barrel():
@@ -80,11 +110,16 @@ def move_barrel():
     print("a. Enter the tunnel")
     print("b. Stay with your friend")
 
-    answer = input("Choose 'a' or 'b': ").lower() 
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'") 
 
     if answer == 'a':
         enter_tunnel()
-    else:
+    if answer == 'b':
         stay_with_friend_end()
 
 def read_note_dungeon():
@@ -92,11 +127,16 @@ def read_note_dungeon():
     print("a. Stay with your friend")
     print("b. Try to escape")
 
-    answer = input("Choose 'a' or 'b': ").lower()
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'")
 
     if answer == 'a':
         stay_with_friend_end()
-    else:
+    if answer == 'b':
         move_barrel()
 
 def sit_next_to_friend():
@@ -104,11 +144,16 @@ def sit_next_to_friend():
     print("a. Try to escape")
     print("b. Read the note")
 
-    answer = input("Choose 'a' or 'b': ").lower()
+    answer = ''
+
+    while answer != 'a' and answer != 'b':
+        answer = input("Choose 'a' or 'b': ").lower()
+        if answer != 'y' and answer != 'n':
+            print("Please select 'a' or 'b'")
 
     if answer == 'a':
         move_barrel()
-    else:
+    if answer == 'b':
         read_note_dungeon()
 
 def start_game():
@@ -126,12 +171,18 @@ def start_game():
         print("a. Move the barrel")
         print("b. Sit next to your friend")
 
-        answer = input("Choose 'a' or 'b': ").lower()
+        answer = ''
+
+        while answer != 'a' and answer != 'b':
+            answer = input("Choose 'a' or 'b': ").lower()
+            if answer != 'y' and answer != 'n':
+                print("Please select 'a' or 'b'")
 
         if answer == 'a':
             move_barrel()
-        else:
+        if answer == 'b':
             stay_with_friend_end()
+
     else:
         print("Bye!")
 
