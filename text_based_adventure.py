@@ -112,15 +112,27 @@ def sit_next_to_friend():
         read_note_dungeon()
 
 def start_game():
-    print("You are trapped in a dungeon with a friend. You see a barrel. Do you move the barrel or sit next to your friend?")
-    print("a. Move the barrel")
-    print("b. Sit next to your friend")
 
-    answer = input("Choose 'a' or 'b': ").lower()
+    ready_to_play = ''
 
-    if answer == 'a':
-        move_barrel()
+    while ready_to_play != 'y' and ready_to_play != 'n':
+        ready_to_play = input("Are you ready to play? y/n: ").lower()
+        if ready_to_play != 'y' and ready_to_play != 'n':
+            print("Please select 'y' or 'n'")
+
+    if ready_to_play == 'y':
+    
+        print("You are trapped in a dungeon with a friend. You see a barrel. Do you move the barrel or sit next to your friend?")
+        print("a. Move the barrel")
+        print("b. Sit next to your friend")
+
+        answer = input("Choose 'a' or 'b': ").lower()
+
+        if answer == 'a':
+            move_barrel()
+        else:
+            stay_with_friend_end()
     else:
-        stay_with_friend_end()
+        print("Bye!")
 
 start_game()
